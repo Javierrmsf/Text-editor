@@ -19,8 +19,8 @@ console.error('put to the DB');
 const Db = await openDB('jate', 1);
   const tx = Db.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
-  const request = store.put({ id: 1, value: content });
-  const result = await request;
+  
+  const result = await store.put({content: content});
   //
   console.log('data saved to DB', result);
 }
